@@ -15,7 +15,7 @@ function Home() {
   let history = useHistory();
 
   const likeAPost = (PostId) => {
-    axios.post("http://localhost:3001/likes", {
+    axios.post("https://mannie-blog.herokuapp.com/likes", {
       PostId: PostId
     }, {
       headers: {
@@ -63,7 +63,7 @@ function Home() {
     if (!localStorage.getItem("accessToken")) {
       history.push("/login");
     } else {
-      axios.get("http://localhost:3001/posts", {
+      axios.get("https://mannie-blog.herokuapp.com/posts", {
         headers: {
           accessToken: localStorage.getItem("accessToken")
         }
